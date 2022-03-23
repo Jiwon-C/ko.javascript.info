@@ -63,7 +63,7 @@ if (response.ok) { // HTTP 상태 코드가 200~299일 경우
 
 - **`response.text()`** -- 응답을 읽고 텍스트를 반환합니다,
 - **`response.json()`** -- 응답을 JSON 형태로 파싱합니다,
-- **`response.formData()`** -- 응답을 `FormData` 객체 형태로 반환합니다. `FormData`에 대한 자세한 내용은 [다음 챕터](info:formdata)에서 다루겠습니다.
+- **`response.()`** -- 응답을 `` 객체 형태로 반환합니다. ``에 대한 자세한 내용은 [다음 챕터](info:)에서 다루겠습니다.
 - **`response.blob()`** -- 응답을 [Blob](info:blob)(타입이 있는 바이너리 데이터) 형태로 반환합니다.
 - **`response.arrayBuffer()`** -- 응답을 [ArrayBuffer](info:arraybuffer-binary-arrays)(바이너리 데이터를 로우 레벨 형식으로 표현한 것) 형태로 반환합니다.
 - 이 외에도 `response.body`가 있는데, [ReadableStream](https://streams.spec.whatwg.org/#rs-class) 객체인 `response.body`를 사용하면 응답 본문을 청크 단위로 읽을 수 있습니다. 자세한 용례는 곧 살펴보겠습니다.
@@ -195,7 +195,7 @@ let response = fetch(protectedUrl, {
 - **`method`** -- HTTP 메서드(예: `POST`)
 - **`body`** -- 요청 본문으로 다음 항목 중 하나이어야 합니다.
   - 문자열(예: JSON 문자열)
-  - `FormData`객체 -- `form/multipart` 형태로 데이터를 전송하기 위해 쓰입니다.
+  - ``객체 -- `form/multipart` 형태로 데이터를 전송하기 위해 쓰입니다.
   - `Blob`나 `BufferSource` -- 바이너리 데이터 전송을 위해 쓰입니다.
   - [URLSearchParams](info:url) -- 데이터를 `x-www-form-urlencoded` 형태로 보내기 위해 쓰이는데, 요즘엔 잘 사용하지 않습니다.
 
@@ -304,13 +304,13 @@ fetch(url, options)
 응답 본문을 얻으려면 다음과 같은 메서드를 사용하면 됩니다.
 - **`response.text()`** -- 응답을 텍스트 형태로 반환함
 - **`response.json()`** -- 응답을 파싱해 JSON 객체로 변경함
-- **`response.formData()`** -- 응답을 `FormData` 객체 형태로 반환(form/multipart 인코딩에 대한 내용은 다음 챕터에서 다룸)
+- **`response.()`** -- 응답을 `` 객체 형태로 반환(form/multipart 인코딩에 대한 내용은 다음 챕터에서 다룸)
 - **`response.blob()`** -- 응답을 [Blob](info:blob)(타입이 있는 바이너리 데이터) 형태로 반환
 - **`response.arrayBuffer()`** --  응답을 [ArrayBuffer](info:arraybuffer-binary-arrays)(바이너리 데이터를 로우 레벨로 표현한 것) 형태로 반환
 
 지금까지 배운 `fetch` 옵션은 다음과 같습니다.
 - `method` -- HTTP 메서드
 - `headers` -- 요청 헤드가 담긴 객체(제약 사항이 있음)
-- `body` -- 보내려는 데이터(요청 본문)로 `string`이나 `FormData`, `BufferSource`, `Blob`, `UrlSearchParams` 객체 형태
+- `body` -- 보내려는 데이터(요청 본문)로 `string`이나 ``, `BufferSource`, `Blob`, `UrlSearchParams` 객체 형태
 
 이어지는 챕터에선 이 외의 옵션과 다양한 `fetch` 유스 케이스를 살펴보겠습니다.
