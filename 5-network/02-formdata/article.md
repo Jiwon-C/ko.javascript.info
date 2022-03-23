@@ -12,7 +12,7 @@ let formData = new FormData([form]);
 
 If HTML `form` element is provided, it automatically captures its fields.
 
-The special thing about `FormData` is that network methods, such as `fetch`, can accept a `FormData` object as a body. It's encoded and sent out with `Content-Type: multipart/form-data`.
+`fetch` 등의 네트워크 메서드가 `FormData` 객체를 바디로 받는다는 건 `FormData`의 특징입니다. 이때 브라우저가 보내는 HTTP 메시지는 인코딩되고 `Content-Type` 속성은 `multipart/form-data`로 지정된 후 전송됩니다.
 
 From the server point of view, that looks like a usual form submission.
 
